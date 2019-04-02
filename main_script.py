@@ -1,19 +1,13 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import os
 import argparse
-from src.models.unet import UNet
-from src.models.thunder import thunder
+from src.unet import UNet
+from src.nmf import model_implementaiton
 
 # creating the parser
 parser = argparse.ArgumentParser(description='Trains the model and outputs predictions.')
 
 #adding agrument to the parser
-parser.add_argument('--model', type=str, choices=['unet','thunder'], 
+parser.add_argument('--model', type=str, choices=['unet','nmf'], 
     default='unet', help = 'model for neuron finding')
 
 #choose the model
@@ -22,6 +16,6 @@ model = args.model
 
 if model == 'unet':
     UNet(model)
-elif model == 'thunder':
-    thunder(model)
+elif model == 'nmf':
+    model_implementaiton()
 
