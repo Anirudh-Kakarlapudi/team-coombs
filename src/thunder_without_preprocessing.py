@@ -12,7 +12,31 @@ import json
 import thunder as td
 from extraction import NMF
 import os
+import zipfile
 
+def extract_zip_data(path):
+        files = os.listdir(path)
+        print(files)
+        for file in files:
+            print("Extracting "+file)
+            filepath = path+ file
+            print(filepath)
+            zip_ref = zipfile.ZipFile(filepath, 'r')
+            print(zip_ref)
+            if file[-8:] == 'test.zip':
+                zip_ref.extractall(get_test_path(path))
+            else:
+                zip_ref.extractall(get_train_path(path))
+            zip_ref.close()
+                  
+def get_train_path(path):
+        train=path+"/data/train/"
+        return train
+    
+def get_test_path(path):
+        test=path+"/data/test/"
+        return test
+    
 def read_dir(path):
     #path= "/home/anant/data_science_practicum/p3/dataset/test/"
     onlyfiles = [f for f in listdir(path)]
@@ -36,7 +60,7 @@ def model_implementaiton(datasets,path):
         submission.append(result)
 
         print('writing results')
-        with open('submission3.json', 'w') as f:
+        with open('submission.json', 'w') as f:
         	f.write(json.dumps(submission))
         return
         
@@ -51,8 +75,21 @@ def main():
                         help=("Provide the path to the data folder"))
     #input to the path of the dataset
     args=vars(parser.parse_args())
+    path=args['data_path']
+    print(path)
+    # unzipping the file
+    if os.path.exists("data"):
+            print('Data Folder is ready')
+    else:
+            extract_zip_data(path)
+    #extract_zip_data(path)
+    # creating train folder
+    #train_path=get_train_path(path)
+    #creating test folder
+    test_path=get_test_path(path)
+    print(test_path)
     # getting the directory inside the dataset
-    onlyfiles=read_dir(args['data_path'])
+    onlyfiles=read_dir(test_path)
     # applying thunder and saving the json file
     model_implementaiton(onlyfiles,args['data_path'])
     print("Task completed")
