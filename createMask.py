@@ -44,3 +44,12 @@ for fileName in extractedFilesTrain:
     savePath = "D:\\Sushanth\\UGA Notes\\Sem2-DSP,DM,DCS\\DSP\\Projects\\Project 3\\project3\\trainingMask"
     plt.imsave(savePath+ '\\' + fileName + '.jpg' , masks.sum(axis=0))
     #plt.show()
+
+    
+    
+    
+   def tomask(coords):
+    for cord in coords:
+        mask = zeros(dims)
+        mask[cord[0]][cord[1]] = 1
+        return mask
