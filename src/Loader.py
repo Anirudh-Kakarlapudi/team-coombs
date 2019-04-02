@@ -1,6 +1,14 @@
+'''
+This script is built to automatically download the data, extract the data and delete the data when called.
+
+-----------------------------------------
+Authors: Anirudh Kakarlapudi
+
+'''
 import requests
 import zipfile
 import os
+
 
 class Loader:
     '''
@@ -10,7 +18,7 @@ class Loader:
     def __init__(self, download_link='gs://uga-dsp/project3/'):
         '''
         Constructor for the Loader Class
-            
+
         Args:
             download_link: The bucket url from which data is to be downloaded
         '''
@@ -22,10 +30,9 @@ class Loader:
         else:
             self.download_data(download_link)
 
-
     def download_data(self, download_link):
         '''
-        Downloads the zipped file data from the the location if  'data' folder 
+        Downloads the zipped file data from the the location if  'data' folder
         not present
         '''
         if os.path.exists('data'):
@@ -36,8 +43,7 @@ class Loader:
             os.system('gsutil -m cp -r'+download_link+'*'+' ../data/dowload/')
             self.extract_zip_data()
 
-
-    def extract_zip_data(path):
+    def extract_zip_data(self):
         """
         Function to extract the data into test and train folders inside a
         data folder
@@ -45,22 +51,21 @@ class Loader:
         Args:
             path: The path of the folder where zip data is present
         """
-
-        files = os.listdir(path)
+        # Getting all files in a directory
+        files = os.listdir(self.get_test_path())
         for file in files:
             print("Extracting "+file)
-            filepath = path + file
-            print(filepath)
+            filepath = self.get_test_path() + file
             zip_ref = zipfile.ZipFile(filepath, 'r')
             print(zip_ref)
             # Checking if the file is testfile or train file
             if file[-8:] == 'test.zip':
-                # if it is a test file extract that in test_path
+                # if it is a test file extract at test_path
                 zip_ref.extractall(get_test_path(path))
             else:
+                # if it is a train file extract at train_path
                 zip_ref.extractall(get_train_path(path))
             zip_ref.close()
-
 
     def get_train_path(self):
         """
@@ -72,7 +77,6 @@ class Loader:
         self.train = "../data/train/"
         return self.train
 
-
     def get_test_path(self):
         """
         Function to get the train path where unzipped train files are present
@@ -82,3 +86,10 @@ class Loader:
         """
         self.test = "../data/test/"
         return self.test
+        
+    def remove_all_files(self):
+        """
+        Fuction to remove all the data files {zipfiles, train files and test files}.
+        """
+        shutil.rmtree('../data')
+ 
