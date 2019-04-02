@@ -47,5 +47,13 @@ There are no specific guidlines for contibuting. If you see something that could
 # Reference
 [1] https://towardsdatascience.com/canny-edge-detection-step-by-step-in-python-computer-vision-b49c3a2d8123
 
+[2] http://neurofinder.codeneuro.org/
+
+[3] https://en.wikipedia.org/wiki/Non-negative_matrix_factorization
+
+[4] https://github.com/thunder-project/thunder-extraction
+
+[5] https://github.com/thunder-project
+
 # License
 This Project is under the MIT License. For more details visit License file here: https://github.com/dsp-uga/team-coombs/blob/master/LICENSE
