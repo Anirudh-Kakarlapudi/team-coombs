@@ -29,7 +29,19 @@ Training and Testing Dataset can also be found on below website: https://console
 
 
 # How to Run
+[1] Download the repository 
+ 
+[2] Run the script main_script.py
 
+`$ python3 main_script.py `
+
+This script will:
+
+* Download the data in data/download folder
+* It will extract the zip file in data/test or data/test depending on the type of file.
+* It will run the model
+* The result will be saved in the submission file
+* finally it will remove the data from the folder
 
 # Results
 
