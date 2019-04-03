@@ -46,7 +46,7 @@ def model_implementaiton():
         print(temp_path)
         data = td.images.fromtif(temp_path + '/images', ext='tiff')
         print('analyzing')
-        algorithm = NMF(k=5, percentile=99, max_iter=50, overlap=0.1)
+        algorithm = NMF(k=10, percentile=98, max_iter=50, overlap=0.1)
         model = algorithm.fit(data, chunk_size=(50, 50), padding=(25, 25))
         merged = model.merge(0.1)
         print('found %g regions' % merged.regions.count)
