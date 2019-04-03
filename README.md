@@ -55,7 +55,7 @@ This script will:
 
 
 # Contribution
-* see [contributors](https://github.com/dsp-uga/team-coombs/new/master/CONTRIBUTORS.md)file for more details
+* see [contributors](https://github.com/dsp-uga/team-coombs/blob/master/CONTRIBUTORS.md) file for more details
 
 # License
 This Project is under the MIT License. For more details visit License file here: https://github.com/dsp-uga/team-coombs/blob/master/LICENSE
