@@ -16,23 +16,21 @@ This can best be described as object-finding or image segmentation, where the go
 # Data
 The datasets we used to train and test is provided by Dr. Shannon Quinn for the course CSCI 8360: Data Science Practicum.
 
-There are total 9(test) Dataset which are being evaluated.
+There are total 9 datasets(test) which are being evaluated.
 
-Training and Testing Dataset can also be found on below website: https://console.cloud.google.com/storage/browser/uga-dsp/project3/
-
-# Prerequisits
+# Prerequisites
 
 ### The project requires the following technologies to be installed.
 
 * Instructions to download and install Python can be found here. https://www.python.org/
-* After the python is installed, the [thunder package](https://github.com/thunder-project/thunder) can be installed using the following commands.
+* After the python is installed, the [thunder package](https://github.com/thunder-project/thunder) can be installed using the following commands in the command prompt/terminal.
     * `pip install thunder-extraction`
     * `pip install thunder-python`
 
 # How to Run
-[1] Download the repository 
+* Download the repository 
  
-[2] Run the script main_script.py
+* Run the script main_script.py using the following command.
 
 `$ python3 main_script.py `
 
@@ -55,7 +53,7 @@ This script will:
 
 
 # Contribution
-* see [contributors](https://github.com/dsp-uga/team-coombs/blob/master/CONTRIBUTORS.md) file for more details
+* See [Contributors](https://github.com/dsp-uga/team-coombs/blob/master/CONTRIBUTORS.md) file for more details
 
 # License
-This Project is under the MIT License. For more details visit License file here: https://github.com/dsp-uga/team-coombs/blob/master/LICENSE
+This Project is under the MIT License. For more details visit [License](https://github.com/dsp-uga/team-coombs/blob/master/LICENSE) file.
