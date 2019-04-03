@@ -25,8 +25,9 @@ Training and Testing Dataset can also be found on below website: https://console
 ### The project requires the following technologies to be installed.
 
 * Instructions to download and install Python can be found here. https://www.python.org/
-* Instructions to download and install Thunder and Thunder extraction can be found here https://github.com/thunder-project/thunder
-
+* After the python is installed, the [thunder package](https://github.com/thunder-project/thunder) can be installed using the following commands.
+    * `pip install thunder-extraction`
+    * `pip install thunder-python`
 
 # How to Run
 [1] Download the repository 
@@ -53,25 +54,8 @@ This script will:
 | 20 | 99         | 100      | 0.2     | 2.95583 |
 
 
-# Authors
-* Haixing Dai (hd54134@uga.edu)
-* Anirudh Kakarlapudi (kakmaurya@uga.edu)
-* Sushanth Kathirvelu (sk33167@uga.edu)
-* Anant Tripathi (at41132@uga.edu)
-
 # Contribution
-There are no specific guidlines for contibuting. If you see something that could be improved, send a pull request! If you think something should be done differently (or is just-plain-broken), please create an issue.
-
-# Reference
-[1] https://towardsdatascience.com/canny-edge-detection-step-by-step-in-python-computer-vision-b49c3a2d8123
-
-[2] http://neurofinder.codeneuro.org/
-
-[3] https://en.wikipedia.org/wiki/Non-negative_matrix_factorization
-
-[4] https://github.com/thunder-project/thunder-extraction
-
-[5] https://github.com/thunder-project
+* see [contributors](https://github.com/dsp-uga/team-coombs/new/master/CONTRIBUTORS.md)file for more details
 
 # License
 This Project is under the MIT License. For more details visit License file here: https://github.com/dsp-uga/team-coombs/blob/master/LICENSE
